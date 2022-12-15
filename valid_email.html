@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		function thankU(){
+			var name=document.fv.name.value;
+			var mobile=document.fv.mobile.value;
+			var email=document.fv.email.value;
+			var reg = /^([a-zA-Z0-9\._]+)@([a-z]+).([a-z]+){2-3}$/;
+			var password=document.fv.password.value;
+			var checkpassword=document.fv.checkpassword.value;
+			if(name==""){
+				alert("Please enter your name");
+				return false;
+			}
+			if(name.length<3){
+				alert("Please check your name");
+				return false;
+			}
+			if(mobile==""){
+				alert("Plese enter your mobile number");
+				return false;
+			}
+			if(isNan(mobile)||mobile.length<10){
+				alert("Your mobile number is wrong check it once");
+				return false;
+			}
+			if(email==""){
+				alert("Enter your emailID");
+				return false;
+			}
+			if(!email.match(reg)){
+				alert("Please check your emailID");
+				return false;
+			}
+			if(password==""){
+				alert("Enter your password");
+				return false;
+			}
+			if(password.length<8){
+				alert("Please enter a valid password")
+				return false;
+			}
+			if(checkpassoward==""){
+				alert("Please enter your Re type field also");
+				return false;
+			}
+			if(!checkpassword.match(password)){
+				alert("Plese check your password and Re-type password fields once")
+				return false;
+			}
+			return true;  		 	
+		}
+	</script>
+</head>
+<body>
+	<h1>Iam going to work on JavaScropt regular expression</h1>
+	<form name="fv" onsubmit="return thankU()">
+		<p><input type="text" name="name" placeholder="Enter your name" required/></p>
+		<p><input type="text" name="mobile" placeholder="Enter your mobile number"/></p>
+		<p><input type="text" name="email" placeholder="Enter your emailID"/></p>
+		<p><input type="password" name="password" placeholder="Enter your password"/></p>
+		<p><input type="password" name="checkpassword" placeholder="Re-type password"/></p>
+		<p><input type="submit" vlaue="Submit"/>
+		<input type="reset" value="Clear"/></p>
+	</form>
+</body>
+</html>
